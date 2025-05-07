@@ -1,0 +1,28 @@
+@Identity_HostAddress = http://localhost:5194
+
+Post {{Identity_HostAddress}}/api/account/dummy-login
+Accept: application/json
+Content-Type: application/json
+{
+    "username":"test",
+    "password":"1234"
+}
+
+###
+POST {{Identity_HostAddress}}/api/account/register
+Accept: application/json
+Content-Type: application/json
+{
+    "userName":"test",
+    "email":"test@mail.com",
+    "password":"123456",
+    "customProperty":"customValue"
+}
+###
+POST {{Identity_HostAddress}}/api/account/login
+Accept: application/json
+Content-Type: application/json
+{
+    "userName":"test",
+    "password":"123456"
+}
